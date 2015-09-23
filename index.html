@@ -1,0 +1,58 @@
+<!doctype html>
+<head ng-app='newCalc'>
+  <meta charset="UTF-8">
+  <script type="text/javascript" src="angular.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="delayCalculator.js"></script>
+  <!-- <link rel="stylesheet" href="bootstrap.css"> -->
+  <link rel='stylesheet' type="text/css" href='default.css'>
+</head>
+
+<body ng-controller="CalculatorController as calcCtrl">
+
+  <header> Networking Calculator</header>
+  <h1>Supz!^^</h2>
+
+  <section ng-controller="TabController as tab">
+
+    <ul class="nav nav-tabs">
+      <li ng-class="{ active:tab.isSet(0) }">
+        <a href ng-click="tab.setTab(0)">Delay Calculator</a>
+      </li>
+      <li ng-class="{ active:tab.isSet(1) }">
+        <a href ng-click="tab.setTab(1)">Wun</a>
+      </li>
+      <li ng-class="{ active:tab.isSet(2) }">
+        <a href ng-click="tab.setTab(2)">Too</a>
+      </li>
+      <li ng-class="{ active:tab.isSet(3) }">
+        <a href ng-click="tab.setTab(3)">Tree</a>
+      </li>
+    </ul>
+
+    <delay-calculator-tab ng-show="tab.isSet(0)"></delay-calculator-tab>
+
+    <div ng-show="tab.isSet(1)">
+      <h2>Wun</h2>
+      <blockquote>{{mission.plan}}</blockquote>
+    </div>
+
+    <div ng-show="tab.isSet(2)">
+      <h2>Too</h2>
+      <blockquote>{{mission.execute}}</blockquote>
+    </div>
+
+    <div ng-show="tab.isSet(3)">
+      <h2>Tree</h2>
+      <blockquote>{{mission.execute}}</blockquote>
+    </div>
+
+  </section>
+
+  <div id=footer ng-controller='TestController as TestCtrl'>
+    FujiProvingGrounds, 2015.<br>
+    All Rights Reserved.
+  </div>
+
+</body>
+</html>

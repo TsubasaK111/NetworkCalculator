@@ -1,0 +1,38 @@
+
+<h2>Delay Calculations</h2>
+
+<div ng-repeat='dlyCalc in dlyCalcCtrl.library'>
+  <blockquote>
+    <strong>{{dlyCalc.name}}</strong><br>
+    <br>
+    <br>
+    <br>
+  <cite class="clearfix"> - by {{dlyCalc.author}} at {{dlyCalc.dateCreated | date:'medium'}}</cite>
+</blockquote>
+</div>
+
+
+<!--  Framework Form -->
+<form name="addDlyCalc" ng-submit="dlyCalcCtrl.addDelayCalculation()">
+
+  <!--  Live Preview -->
+  <blockquote ng-hide='dlyCalcCtrl.newDelayCalculationIsEmpty()'>
+    <strong>{{dlyCalcCtrl.newDelayCalculation.name}}</strong><br>
+    <cite class="clearfix"> - by {{dlyCalcCtrl.newDelayCalculation.author}} at {{Date.now() | date:'medium'}}</cite>
+  </blockquote>
+
+  <!--  Le Form -->
+  <h4>Start a New Network Delay Calculation</h4>
+  <fieldset class="form-group">
+    <input ng-model="dlyCalcCtrl.newDelayCalculation.name"  class="form-control" placeholder="Calculation Nickname" title="Name" />
+  </fieldset>
+
+  <fieldset class="form-group">
+    <input ng-model="dlyCalcCtrl.newDelayCalculation.author" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
+  </fieldset>
+
+  <fieldset class="form-group">
+    <input type="submit" class="btn btn-primary pull-right" value="Submit Calculations" />
+  </fieldset>
+
+</form>
