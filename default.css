@@ -32,7 +32,7 @@ body {
 header {
   background-color: #00d000;
   color: #555555;
-  padding: 5 10 5 10;
+  /*padding: 5 10 5 10;*/
   text-align: center;
   font-weight: 700;
   font-size: 300%;
@@ -52,5 +52,5 @@ p {
 }
 
 form {
-  width: 50dp;
+  /*width: 50dp;*/
 }

@@ -18,7 +18,7 @@
         };
 
         this.newDelayCalculationIsEmpty = function(){
-          if(this.newDelayCalculation.name === undefined && this.newFramework.author === undefined){
+          if(this.newDelayCalculation.name === undefined && this.newDelayCalculation.author === undefined){
             return true;
           } else {
             return false;

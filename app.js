@@ -6,6 +6,7 @@
 // 1. dependencies are module names, NOT filenames. (do not append .js at the end!)
 // 2. objects need to be placed in the module that uses the object.
 // 3. use Angular.js (not minified) for human readable error reports.
+// 4. Apply ng-app="modulename" to html element, NOT head element. If in head element, ang will not load AT ALL.
 
   app.controller("CalculatorController", function() {
     this.calculator = defaultCalculator;
@@ -23,10 +24,7 @@
 
   app.controller('TestController', function(){
       this.whatTimeIsIt = Date.now().toString();
-      this.boolean = true;
-
       alert('Great Tomfooleries! testCtrl is working!');
-      alert('time now is: ' & this.whatTimeIsIt);
       console.log('time now is:' & this.whatTimeIsIt);
   });
 
