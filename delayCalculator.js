@@ -11,9 +11,14 @@
 
         this.addDelayCalculation = function(){
           this.newDelayCalculation.dateCreated = Date.now();
+          this.newDelayCalculation.packetizationDelay = (this.newDelayCalculation.packetInBits/this.newDelayCalculation.dataRateInBitsPerSec);
+          this.newDelayCalculation.propagationDelay = (this.newDelayCalculation.lengthInMeters/this.newDelayCalculation.propagationSpeedInMetersPerSecond);
+          this.newDelayCalculation.endToEndDelay = this.newDelayCalculation.repeatTimes*(this.newDelayCalculation.packetizationDelay + this.newDelayCalculation.propagationDelay + this.newDelayCalculation.queueingDelay);
           this.library.push(this.newDelayCalculation);
           console.log(this.newDelayCalculation);
+          console.log("The End-to-end Delay of this connection is: " & this.newDelayCalculation.endToEndDelay & " seconds.");
           console.log(this.library);
+
           this.newDelayCalculation = {};
         };
 
@@ -31,16 +36,22 @@
 
   var defaultLibrary = [{
     name:'SMEAC',
-    chosen: false,
-    author: 'Tsubasa@OpenAar'
+    author: 'Tsubasa@FujiProvingGrounds'
   }, {
     name: 'MIST',
-    chosen: false,
-    author: 'Tsubasa@OpenAar'
+    author: 'Tsubasa@FujiProvingGrounds'
   }, {
-    name: 'METT-TCR',
-    chosen: false,
-    author: 'Tsubasa@OpenAar'
+    name: 'FirstTest',
+    author: 'Tsubasa@FujiProvingGrounds',
+    packetInBits: '',
+    dataRateInBitsPerSec: '',
+    packetizationDelay: '',
+    lengthInMeters: '',
+    propagationSpeedInMetersPerSecond: '',
+    propagationDelay: '',
+    queueingDelay: '',
+    repeatTimes: '',
+    endToEndDelay: ''
   }];
 
 })();

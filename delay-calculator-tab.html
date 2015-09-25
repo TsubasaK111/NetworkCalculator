@@ -5,12 +5,42 @@
   <blockquote>
     <strong>{{dlyCalc.name}}</strong><br>
     <br>
-    <br>
-    <br>
   <cite class="clearfix"> - by {{dlyCalc.author}} at {{dlyCalc.dateCreated | date:'medium'}}</cite>
+  <br>
+  <ul>
+    <li>
+      Packet in Bits: {{dlyCalc.packetInBits}}
+    </li>
+    <li>
+      Data Rate in Bits/Sec: {{dlyCalc.dataRateInBitsPerSec}}
+    </li>
+    <li b>
+      Packetization Delay: {{dlyCalc.packetizationDelay}}
+    </li /b>
+  </ul>
+  <ul>
+    <li>
+      Length in Meters: {{dlyCalc.lengthInMeters}}
+    </li>
+    <li>
+      Propagation Speed in Meters/Sec: {{dlyCalc.propagationSpeedInMetersPerSecond}}
+    </li>
+    <li b>
+      Propagation Delay: {{dlyCalc.propagationDelay}}
+    </li /b>
+  </ul>
+  <ul>
+    <li b>
+      Queueing Delay: {{dlyCalc.queueingDelay}}
+    </li /b>
+    <li>
+      Link Repeat #: {{dlyCalc.repeatTimes}}
+    </li>
+  </ul>
+  <strong>End to End Delay: {{dlyCalc.endToEndDelay}}</strong><br>
+
 </blockquote>
 </div>
-
 
 <!--  Framework Form -->
 <form name="addDlyCalc" ng-submit="dlyCalcCtrl.addDelayCalculation()">
@@ -19,9 +49,43 @@
   <blockquote ng-hide='dlyCalcCtrl.newDelayCalculationIsEmpty()'>
     <strong>{{dlyCalcCtrl.newDelayCalculation.name}}</strong><br>
     <cite class="clearfix"> - by {{dlyCalcCtrl.newDelayCalculation.author}} at {{Date.now() | date:'medium'}}</cite>
+    <br>
+    <ul>
+      <li>
+        Packet in Bits: {{dlyCalcCtrl.newDelayCalculation.packetInBits}}
+      </li>
+      <li>
+        Data Rate in Bits/Sec: {{dlyCalcCtrl.newDelayCalculation.dataRateInBitsPerSec}}
+      </li>
+      <li b>
+        Packetization Delay: {{dlyCalcCtrl.newDelayCalculation.packetInBits/dlyCalcCtrl.newDelayCalculation.dataRateInBitsPerSec}}
+      </li /b>
+    </ul>
+    <ul>
+      <li>
+        Length in Meters: {{dlyCalcCtrl.newDelayCalculation.lengthInMeters}}
+      </li>
+      <li>
+        Propagation Speed in Meters/Sec: {{dlyCalcCtrl.newDelayCalculation.propagationSpeedInMetersPerSecond}}
+      </li>
+      <li b>
+        Propagation Delay: {{dlyCalcCtrl.newDelayCalculation.lengthInMeters/dlyCalcCtrl.newDelayCalculation.propagationSpeedInMetersPerSecond}}
+      </li /b>
+    </ul>
+    <ul>
+      <li b>
+        Queueing Delay: {{dlyCalcCtrl.newDelayCalculation.queueingDelay}}
+      </li /b>
+      <li>
+        Link Repeat #: {{dlyCalcCtrl.newDelayCalculation.repeatTimes}}
+      </li>
+    </ul>
+    <strong>End to End Delay:</strong> <i>Hit Submit to Calculate</i> <br>
+    <!-- <strong>End to End Delay: {{dlyCalcCtrl.newDelayCalculation.endToEndDelay}}</strong><br> -->
+
   </blockquote>
 
-  <!--  Le Form -->
+  <!--  Form Inputs -->
   <h4>Start a New Network Delay Calculation</h4>
   <fieldset class="form-group">
     <input ng-model="dlyCalcCtrl.newDelayCalculation.name"  class="form-control" placeholder="Calculation Nickname" title="Name" />
@@ -29,6 +93,21 @@
 
   <fieldset class="form-group">
     <input ng-model="dlyCalcCtrl.newDelayCalculation.author" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
+  </fieldset>
+
+  <fieldset class="form-group">
+    <input ng-model="dlyCalcCtrl.newDelayCalculation.packetInBits"  class="form-control" placeholder="Packet Size (Bits)" title="" />
+    <input ng-model="dlyCalcCtrl.newDelayCalculation.dataRateInBitsPerSec"  class="form-control" placeholder="Data Rate (Bits/Sec)" title="" />
+  </fieldset>
+
+  <fieldset class="form-group">
+    <input ng-model="dlyCalcCtrl.newDelayCalculation.lengthInMeters"  class="form-control" placeholder="Length (meters)" title="" />
+    <input ng-model="dlyCalcCtrl.newDelayCalculation.propagationSpeedInMetersPerSecond"  class="form-control" placeholder="Propagatio Speed (Meters/Sec)" title="" />
+  </fieldset>
+
+  <fieldset class="form-group">
+    <input ng-model="dlyCalcCtrl.newDelayCalculation.queueingDelay"  class="form-control" placeholder="Queueing Delay (Secs)" title="" />
+    <input ng-model="dlyCalcCtrl.newDelayCalculation.repeatTimes"  class="form-control" placeholder="How many times does this link repeat?" title="" />
   </fieldset>
 
   <fieldset class="form-group">
