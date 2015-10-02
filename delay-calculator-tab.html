@@ -8,34 +8,18 @@
   <cite class="clearfix"> - by {{dlyCalc.author}} at {{dlyCalc.dateCreated | date:'medium'}}</cite>
   <br>
   <ul>
-    <li>
-      Packet in Bits: {{dlyCalc.packetInBits}}
-    </li>
-    <li>
-      Data Rate in Bits/Sec: {{dlyCalc.dataRateInBitsPerSec}}
-    </li>
-    <li b>
-      Packetization Delay: {{dlyCalc.packetizationDelay}}
-    </li /b>
+    <li>Packet in Bits: {{dlyCalc.packetInBits}}</li>
+    <li>Data Rate in Bits/Sec: {{dlyCalc.dataRateInBitsPerSec}}</li>
+    <li><b>Packetization Delay: {{dlyCalc.packetizationDelay}}</li></b>
   </ul>
   <ul>
-    <li>
-      Length in Meters: {{dlyCalc.lengthInMeters}}
-    </li>
-    <li>
-      Propagation Speed in Meters/Sec: {{dlyCalc.propagationSpeedInMetersPerSecond}}
-    </li>
-    <li b>
-      Propagation Delay: {{dlyCalc.propagationDelay}}
-    </li /b>
+    <li>Length in Meters: {{dlyCalc.lengthInMeters}}</li>
+    <li>Propagation Speed in Meters/Sec: {{dlyCalc.propagationSpeedInMetersPerSecond}}</li>
+    <li><b>Propagation Delay: {{dlyCalc.propagationDelay}}</li></b>
   </ul>
   <ul>
-    <li b>
-      Queueing Delay: {{dlyCalc.queueingDelay}}
-    </li /b>
-    <li>
-      Link Repeat #: {{dlyCalc.repeatTimes}}
-    </li>
+    <li><b>Queueing Delay: {{dlyCalc.queueingDelay}}</li></b>
+    <li>Link Repeat #: {{dlyCalc.repeatTimes}}</li>
   </ul>
   <strong>End to End Delay: {{dlyCalc.endToEndDelay}}</strong><br>
 
@@ -51,37 +35,20 @@
     <cite class="clearfix"> - by {{dlyCalcCtrl.newDelayCalculation.author}} at {{Date.now() | date:'medium'}}</cite>
     <br>
     <ul>
-      <li>
-        Packet in Bits: {{dlyCalcCtrl.newDelayCalculation.packetInBits}}
-      </li>
-      <li>
-        Data Rate in Bits/Sec: {{dlyCalcCtrl.newDelayCalculation.dataRateInBitsPerSec}}
-      </li>
-      <li b>
-        Packetization Delay: {{dlyCalcCtrl.newDelayCalculation.packetInBits/dlyCalcCtrl.newDelayCalculation.dataRateInBitsPerSec}}
-      </li /b>
+      <li>Packet in Bits: {{dlyCalcCtrl.newDelayCalculation.packetInBits}}</li>
+      <li>Data Rate in Bits/Sec: {{dlyCalcCtrl.newDelayCalculation.dataRateInBitsPerSec}}</li>
+      <li><b>Packetization Delay: {{dlyCalcCtrl.newDelayCalculation.packetInBits/dlyCalcCtrl.newDelayCalculation.dataRateInBitsPerSec}}</li></b>
     </ul>
     <ul>
-      <li>
-        Length in Meters: {{dlyCalcCtrl.newDelayCalculation.lengthInMeters}}
-      </li>
-      <li>
-        Propagation Speed in Meters/Sec: {{dlyCalcCtrl.newDelayCalculation.propagationSpeedInMetersPerSecond}}
-      </li>
-      <li b>
-        Propagation Delay: {{dlyCalcCtrl.newDelayCalculation.lengthInMeters/dlyCalcCtrl.newDelayCalculation.propagationSpeedInMetersPerSecond}}
-      </li /b>
+      <li>Length in Meters: {{dlyCalcCtrl.newDelayCalculation.lengthInMeters}}</li>
+      <li>Propagation Speed in Meters/Sec: {{dlyCalcCtrl.newDelayCalculation.propagationSpeedInMetersPerSecond}}</li>
+      <li><b>Propagation Delay: {{dlyCalcCtrl.newDelayCalculation.lengthInMeters/dlyCalcCtrl.newDelayCalculation.propagationSpeedInMetersPerSecond}}</li></b>
     </ul>
     <ul>
-      <li b>
-        Queueing Delay: {{dlyCalcCtrl.newDelayCalculation.queueingDelay}}
-      </li /b>
-      <li>
-        Link Repeat #: {{dlyCalcCtrl.newDelayCalculation.repeatTimes}}
-      </li>
+      <li><b>Queueing Delay: {{dlyCalcCtrl.newDelayCalculation.queueingDelay}}</li></b>
+      <li>Link Repeat #: {{dlyCalcCtrl.newDelayCalculation.repeatTimes}}</li>
     </ul>
     <strong>End to End Delay:</strong> <i>Hit Submit to Calculate</i> <br>
-    <!-- <strong>End to End Delay: {{dlyCalcCtrl.newDelayCalculation.endToEndDelay}}</strong><br> -->
 
   </blockquote>
 
@@ -102,7 +69,7 @@
 
   <fieldset class="form-group">
     <input ng-model="dlyCalcCtrl.newDelayCalculation.lengthInMeters"  class="form-control" placeholder="Length (meters)" title="" />
-    <input ng-model="dlyCalcCtrl.newDelayCalculation.propagationSpeedInMetersPerSecond"  class="form-control" placeholder="Propagatio Speed (Meters/Sec)" title="" />
+    <input ng-model="dlyCalcCtrl.newDelayCalculation.propagationSpeedInMetersPerSecond"  class="form-control" placeholder="Propagation Speed (Meters/Sec)" title="" />
   </fieldset>
 
   <fieldset class="form-group">
