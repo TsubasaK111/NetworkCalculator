@@ -1,6 +1,6 @@
 (function(){
 
-  var app = angular.module('newCalc', ["delayCalculator"]);
+  var app = angular.module('newCalc', ["delayCalculator","poissonCalculator"]);
 
 // Lessons Learned:
 // 1. dependencies are module names, NOT filenames. (do not append .js at the end!)
@@ -13,7 +13,7 @@
   });
 
   app.controller("TabController", function() {
-    this.tab = 1;
+    this.tab = 0;
     this.isSet = function(checkTab) {
       return this.tab === checkTab;
     };

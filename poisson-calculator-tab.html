@@ -1,0 +1,47 @@
+
+<h2>Poisson Model Calculations</h2>
+
+<div ng-repeat='pssnCalc in pssnCalcCtrl.library'>
+  <blockquote>
+    <strong>{{pssnCalc.name}}</strong><br>
+    <br>
+  <cite class="clearfix"> - by {{pssnCalc.author}} at {{pssnCalc.dateCreated | date:'medium'}}</cite>
+  <br>
+  <ul>
+    <li></li>
+  </ul>
+  <strong></strong><br>
+
+</blockquote>
+</div>
+
+<!--  Framework Form -->
+<form name="addPssnCalc" ng-submit="pssnCalcCtrl.addPoissonCalculation()">
+
+  <!--  Live Preview -->
+  <blockquote ng-hide='pssnCalcCtrl.newPoissonCalculationIsEmpty()'>
+    <strong>{{pssnCalcCtrl.newPoissonCalculation.name}}</strong><br>
+    <cite class="clearfix"> - by {{pssnCalcCtrl.newPoissonCalculation.author}} at {{Date.now() | date:'medium'}}</cite>
+    <br>
+    <ul>
+      <li></li>
+    </ul>
+    <strong></strong> <i></i> <br>
+
+  </blockquote>
+
+  <!--  Form Inputs -->
+  <h4>Start a New Poisson Model Calculation</h4>
+  <fieldset class="form-group">
+    <input ng-model="pssnCalcCtrl.newPoissonCalculation.name"  class="form-control" placeholder="Calculation Nickname" title="Name" />
+  </fieldset>
+
+  <fieldset class="form-group">
+    <input ng-model="pssnCalcCtrl.newPoissonCalculation.author" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
+  </fieldset>
+
+  <fieldset class="form-group">
+    <input type="submit" class="btn btn-primary pull-right" value="Submit Calculations" />
+  </fieldset>
+
+</form>

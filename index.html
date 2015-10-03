@@ -6,6 +6,7 @@
   <script type="text/javascript" src="angular.js"></script>
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="delayCalculator.js"></script>
+  <script type="text/javascript" src="poissonCalculator.js"></script>
   <link rel="stylesheet" href="bootstrap.css">
   <link rel='stylesheet' type="text/css" href='default.css'>
 </head>
@@ -22,7 +23,7 @@
         <a href ng-click="tab.setTab(0)">Delay Calculator</a>
       </li>
       <li ng-class="{ active:tab.isSet(1) }">
-        <a href ng-click="tab.setTab(1)">Wun</a>
+        <a href ng-click="tab.setTab(1)">Poisson Calculator</a>
       </li>
       <li ng-class="{ active:tab.isSet(2) }">
         <a href ng-click="tab.setTab(2)">Too</a>
@@ -34,10 +35,7 @@
 
     <delay-calculator-tab ng-show="tab.isSet(0)"></delay-calculator-tab>
 
-    <div ng-show="tab.isSet(1)">
-      <h2>Wun</h2>
-      <blockquote>{{mission.plan}}</blockquote>
-    </div>
+    <poisson-calculator-tab ng-show="tab.isSet(1)"></poisson-calculator-tab>
 
     <div ng-show="tab.isSet(2)">
       <h2>Too</h2>
