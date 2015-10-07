@@ -6,7 +6,8 @@
       restrict:'E',
       templateUrl: 'poisson-calculator-tab.html',
       controller: function(){
-        this.newPoissonCalculation = {};
+        // this.newPoissonCalculation = this.newPoissonCalculation ? this.newPoissonCalculation : {};
+        this.newPoissonCalculation = this.newPoissonCalculation || {};
         this.library = defaultLibrary;
 
         this.addPoissonCalculation = function(){
